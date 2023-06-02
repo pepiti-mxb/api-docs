@@ -1,6 +1,6 @@
-# top
+# Top
 
-## Get Top mmr
+## mmr
 
 ```python
 import requests
@@ -113,7 +113,7 @@ Parameter | Default | Description
 limit | 10 | return more values
 
 
-## Get Top sr
+## sr
 
 ```python
 import requests
@@ -225,7 +225,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 limit | 10 | return more values
 
-## Get Top contacts
+## contacts
 
 ```python
 import requests
@@ -337,7 +337,7 @@ Parameter | Default | Description
 --------- | ------- | -----------
 limit | 10 | return more values
 
-## Get Top donators
+## donators
 
 ```python
 import requests
@@ -450,7 +450,7 @@ Parameter | Default | Description
 limit | 10 | return more values
 
 
-## Get Top Bikes
+## Bikes
 
 ```python
 import requests
@@ -484,7 +484,7 @@ Parameter | Default | Description
 limit | 10 | return more values
 
 
-## Get Top Riders
+## Riders
 
 ```python
 import requests
