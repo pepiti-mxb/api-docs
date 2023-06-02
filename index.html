@@ -325,25 +325,60 @@
               </ul>
           </li>
           <li>
-            <a href="#top" class="toc-h1 toc-link" data-title="top">top</a>
+            <a href="#riders" class="toc-h1 toc-link" data-title="Riders">Riders</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#get-top-mmr" class="toc-h2 toc-link" data-title="Get Top mmr">Get Top mmr</a>
+                    <a href="#details" class="toc-h2 toc-link" data-title="Details">Details</a>
                   </li>
                   <li>
-                    <a href="#get-top-sr" class="toc-h2 toc-link" data-title="Get Top sr">Get Top sr</a>
+                    <a href="#mmr-history" class="toc-h2 toc-link" data-title="MMR History">MMR History</a>
                   </li>
                   <li>
-                    <a href="#get-top-contacts" class="toc-h2 toc-link" data-title="Get Top contacts">Get Top contacts</a>
+                    <a href="#races" class="toc-h2 toc-link" data-title="Races">Races</a>
                   </li>
                   <li>
-                    <a href="#get-top-donators" class="toc-h2 toc-link" data-title="Get Top donators">Get Top donators</a>
+                    <a href="#personal-records" class="toc-h2 toc-link" data-title="Personal records">Personal records</a>
                   </li>
                   <li>
-                    <a href="#get-top-bikes" class="toc-h2 toc-link" data-title="Get Top Bikes">Get Top Bikes</a>
+                    <a href="#total-laps" class="toc-h2 toc-link" data-title="Total laps">Total laps</a>
                   </li>
                   <li>
-                    <a href="#get-top-riders" class="toc-h2 toc-link" data-title="Get Top Riders">Get Top Riders</a>
+                    <a href="#laps" class="toc-h2 toc-link" data-title="Laps">Laps</a>
+                  </li>
+                  <li>
+                    <a href="#laps-per-track" class="toc-h2 toc-link" data-title="Laps per track">Laps per track</a>
+                  </li>
+                  <li>
+                    <a href="#search" class="toc-h2 toc-link" data-title="search">search</a>
+                  </li>
+                  <li>
+                    <a href="#ban-admin" class="toc-h2 toc-link" data-title="ban (admin)">ban (admin)</a>
+                  </li>
+                  <li>
+                    <a href="#unban-admin" class="toc-h2 toc-link" data-title="unban (admin)">unban (admin)</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+            <a href="#top" class="toc-h1 toc-link" data-title="Top">Top</a>
+              <ul class="toc-list-h2">
+                  <li>
+                    <a href="#mmr" class="toc-h2 toc-link" data-title="mmr">mmr</a>
+                  </li>
+                  <li>
+                    <a href="#sr" class="toc-h2 toc-link" data-title="sr">sr</a>
+                  </li>
+                  <li>
+                    <a href="#contacts" class="toc-h2 toc-link" data-title="contacts">contacts</a>
+                  </li>
+                  <li>
+                    <a href="#donators" class="toc-h2 toc-link" data-title="donators">donators</a>
+                  </li>
+                  <li>
+                    <a href="#bikes" class="toc-h2 toc-link" data-title="Bikes">Bikes</a>
+                  </li>
+                  <li>
+                    <a href="#riders" class="toc-h2 toc-link" data-title="Riders">Riders</a>
                   </li>
               </ul>
           </li>
@@ -376,7 +411,460 @@
 <p><code>GET http://example.com/api/kittens</code></p>
 
 <p>Welcome to pepiti.com API.</p>
-<h1 id='top'>top</h1><h2 id='get-top-mmr'>Get Top mmr</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h1 id='riders'>Riders</h1><h2 id='details'>Details</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FF01100001013A65F0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MMR"</span><span class="p">:</span><span class="w"> </span><span class="mi">1148</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"SR"</span><span class="p">:</span><span class="w"> </span><span class="mi">2299</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pepiti"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"contact"</span><span class="p">:</span><span class="w"> </span><span class="mi">341</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"banned"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"banned_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://avatars.akamai.steamstatic.com/fec0d1643347a79a72441a0ce50631550bbd2fa2_full.jpg"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"online"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"donation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"seasons"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First summer"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MMR"</span><span class="p">:</span><span class="w"> </span><span class="mi">1148</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">4308</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"races"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"second"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"third"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total_races"</span><span class="p">:</span><span class="w"> </span><span class="mi">142</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fastlap"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"holeshot"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"bikes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"2021 KTM 450 SX-F OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2020 Honda CRF250R SM OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2021 KTM 250 SX-F SM OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2022 Honda CRF250R OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2021 KTM 250 SX-F OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2021 KTM 125 SX OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2022 Husqvarna TC 125 OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2022 Yamaha YZ125 OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2021 KTM 125 SX SM OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2021 KTM 250 SX OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2021 KTM Black Knight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2022 Beta 300 RX OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2022 Kawasaki KX250F OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"2022 Honda CRF450R OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Kawasaki KX250 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"KTM 450 SX-F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Honda CRF250R 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Kawasaki KX450 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"KTM 250 SX-F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">349</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Yamaha YZ450F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"GASGAS MC 250F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Yamaha YZ250F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">119</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Suzuki RM-Z250 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Fantic XXF 250 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"KTM 350 SX-F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"GASGAS MC 350F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"GASGAS MC 450F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"TM MX300Fi 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Fantic XXF 450 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"Husqvarna FC 250 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"world_records"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"MX1 OEM"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MX1-2T OEM"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MX2 OEM"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MX2-2T OEM"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"total_laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">1022</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"personal_records"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"average_speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">14.078571428571427</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"favorite_bike"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"KTM 250 SX-F 2023"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">349</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0</code></p>
+<h2 id='mmr-history'>MMR History</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/mmr_history'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/mmr_history"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FF01100001013A65F0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"MMR_updates"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">1671805750</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"mmr"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"initial"</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-2'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/mmr_history</code></p>
+<h2 id='races'>Races</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/races'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/races"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"races"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"track"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Forest Raceway"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63d3cdc706bc08738be863e9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"wheater"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"air_temp"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear"</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"FastestLap"</span><span class="p">:</span><span class="w"> </span><span class="mi">70023</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"Classification"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"RaceNum"</span><span class="p">:</span><span class="w"> </span><span class="s2">"33"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"RaceTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">301262</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Gap"</span><span class="p">:</span><span class="w"> </span><span class="mi">13103</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Penalty"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"-"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"Pos"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"MMR"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"BPP"</span><span class="p">:</span><span class="w"> </span><span class="mf">24.502399999999998</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"old_MMR"</span><span class="p">:</span><span class="w"> </span><span class="mi">1095</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"PRB"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"NRB"</span><span class="p">:</span><span class="w"> </span><span class="mf">-1.8</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"FL"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"HS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total"</span><span class="p">:</span><span class="w"> </span><span class="mi">53</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"total_races"</span><span class="p">:</span><span class="w"> </span><span class="mi">194</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-3'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/races</code></p>
+<h2 id='personal-records'>Personal records</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/records'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/records"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"records"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6472af3dcc44366caf609fa2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX2 OEM"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rider_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FF01100001013A65F0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"track"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MXB Club"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"air_temp"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"average_speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.9</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Husqvarna FC 250 2023"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lap_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">60440</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"6474e6458a75e65cac273442"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rider_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pepiti"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"WARMUP"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"split_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">22832</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"split_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">42281</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mf">1685382967.009213</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-4'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/records</code></p>
+<h2 id='total-laps'>Total laps</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/total_laps'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/total_laps"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"total_laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">1022</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-5'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/total_laps</code></p>
+<h2 id='laps'>Laps</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/laps'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/laps"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63d3d0d51d04747c97f14061"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rider_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FF01100001013A65F0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rider_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pepiti"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yamaha YZ250F 2023"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX2 OEM"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"track"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Forest Raceway"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lap_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">70023</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"split_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">23164</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"split_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">48592</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"average_speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.9</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"air_temp"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63d3cdc706bc08738be863e9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RACE2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mf">1674825941.7969084</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-6'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/laps</code></p>
+
+<p>This endpoint returns only 10 results at the moment</p>
+<h2 id='laps-per-track'>Laps per track</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/track/Forest%20Raceway'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/track/Forest%20Raceway"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63d3d0d51d04747c97f14061"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"race_number"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rider_guid"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FF01100001013A65F0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"rider_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pepiti"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"bike"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Yamaha YZ250F 2023"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"category"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MX2 OEM"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"track"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Forest Raceway"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"lap_time"</span><span class="p">:</span><span class="w"> </span><span class="mi">70023</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"split_1"</span><span class="p">:</span><span class="w"> </span><span class="mi">23164</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"split_2"</span><span class="p">:</span><span class="w"> </span><span class="mi">48592</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"average_speed"</span><span class="p">:</span><span class="w"> </span><span class="mf">17.9</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"conditions"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Clear"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"air_temp"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"race_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"63d3cdc706bc08738be863e9"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"session"</span><span class="p">:</span><span class="w"> </span><span class="s2">"RACE2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mf">1674825941.7969084</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-7'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/track/Forest%20Raceway</code></p>
+
+<p>This endpoint returns ALL results</p>
+<h2 id='search'>search</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/search/Pepiti'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/search/Pepiti"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="nl">"results"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"FF01100001013A65F0"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"MMR"</span><span class="p">:</span><span class="w"> </span><span class="mi">1148</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"SR"</span><span class="p">:</span><span class="w"> </span><span class="mi">2299</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Pepiti"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"contact"</span><span class="p">:</span><span class="w"> </span><span class="mi">341</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"banned"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"banned_by"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"avatar"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://avatars.akamai.steamstatic.com/fec0d1643347a79a72441a0ce50631550bbd2fa2_full.jpg"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"admin"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"online"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"server"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"donation"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"seasons"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+            </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"First summer"</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"MMR"</span><span class="p">:</span><span class="w"> </span><span class="mi">1148</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"position"</span><span class="p">:</span><span class="w"> </span><span class="mi">4308</span><span class="w">
+        </span><span class="p">}],</span><span class="w">
+        </span><span class="nl">"races"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"first"</span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"second"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"third"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"total_races"</span><span class="p">:</span><span class="w"> </span><span class="mi">142</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"fastlap"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+            </span><span class="nl">"holeshot"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+        </span><span class="p">},</span><span class="w">
+        </span><span class="nl">"bikes"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+            </span><span class="nl">"2021 KTM 450 SX-F OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">25</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2020 Honda CRF250R SM OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2021 KTM 250 SX-F SM OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2022 Honda CRF250R OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">72</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2021 KTM 250 SX-F OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">26</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2021 KTM 125 SX OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">52</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2022 Husqvarna TC 125 OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2022 Yamaha YZ125 OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">33</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2021 KTM 125 SX SM OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2021 KTM 250 SX OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">18</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2021 KTM Black Knight"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2022 Beta 300 RX OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2022 Kawasaki KX250F OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">45</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"2022 Honda CRF450R OEM"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Kawasaki KX250 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"KTM 450 SX-F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">21</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Honda CRF250R 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">43</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Kawasaki KX450 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"KTM 250 SX-F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">349</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Yamaha YZ450F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"GASGAS MC 250F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Yamaha YZ250F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">119</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Suzuki RM-Z250 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Fantic XXF 250 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"KTM 350 SX-F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">34</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"GASGAS MC 350F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"GASGAS MC 450F 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"TM MX300Fi 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Fantic XXF 450 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w">
+            </span><span class="p">},</span><span class="w">
+            </span><span class="nl">"Husqvarna FC 250 2023"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                </span><span class="nl">"laps"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="w">
+            </span><span class="p">}</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-8'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/search/Pepiti</code></p>
+<h2 id='ban-admin'>ban (admin)</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer token'</span><span class="p">}</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/ban/&lt;reason&gt;'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/ban/&lt;reason&gt;"</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-9'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/ban/&lt;reason&gt;</code></p>
+<h2 id='unban-admin'>unban (admin)</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span><span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer token'</span><span class="p">}</span>
+<span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/unban'</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">headers</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/unban"</span> <span class="nt">-H</span> <span class="s2">"Authorization: Bearer {token}"</span>
+</code></pre></div>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="nl">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">}</span><span class="w">
+</span></code></pre></div><h3 id='http-request-10'>HTTP Request</h3>
+<p><code>GET https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0/unban</code></p>
+<h1 id='top'>Top</h1><h2 id='mmr'>mmr</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/top/mmr'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/top/mmr"</span>
@@ -485,7 +973,7 @@
 <td>return more values</td>
 </tr>
 </tbody></table>
-<h2 id='get-top-sr'>Get Top sr</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h2 id='sr'>sr</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/top/sr'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/top/sr"</span>
@@ -594,7 +1082,7 @@
 <td>return more values</td>
 </tr>
 </tbody></table>
-<h2 id='get-top-contacts'>Get Top contacts</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h2 id='contacts'>contacts</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/top/contacts'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/top/contacts"</span>
@@ -703,7 +1191,7 @@
 <td>return more values</td>
 </tr>
 </tbody></table>
-<h2 id='get-top-donators'>Get Top donators</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h2 id='donators'>donators</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/top/donators'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/top/donators"</span>
@@ -812,7 +1300,7 @@
 <td>return more values</td>
 </tr>
 </tbody></table>
-<h2 id='get-top-bikes'>Get Top Bikes</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h2 id='bikes'>Bikes</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/top/bikes'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/top/bikes"</span>
@@ -842,7 +1330,7 @@
 <td>return more values</td>
 </tr>
 </tbody></table>
-<h2 id='get-top-riders'>Get Top Riders</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<h2 id='riders'>Riders</h2><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">requests</span><span class="p">.</span><span class="n">get</span><span class="p">(</span><span class="s">'https://pepiti.com/stats/api/v1/top/riders'</span><span class="p">).</span><span class="n">json</span><span class="p">()</span>
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://pepiti.com/stats/api/v1/top/riders"</span>
