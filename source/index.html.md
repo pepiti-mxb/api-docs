@@ -12,6 +12,7 @@ toc_footers:
 includes:
   - index
   - riders
+  - subscription
   - top
   - errors
 
