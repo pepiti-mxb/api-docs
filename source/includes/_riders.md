@@ -24,6 +24,8 @@ curl "https://pepiti.com/stats/api/v1/rider/FF01100001013A65F0"
 	"banned_by": null,
 	"avatar": "https://avatars.akamai.steamstatic.com/fec0d1643347a79a72441a0ce50631550bbd2fa2_full.jpg",
 	"type": "admin",
+	"subscription_type": "regular",
+	"subscription_end": 1735689600,
 	"online": false,
 	"server": null,
 	"donation": 0,
